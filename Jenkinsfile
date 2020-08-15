@@ -32,11 +32,13 @@ pipeline {
         }
 		stage('build docker image'){
 			steps{
+			 sh '''#!/bin/bash
 			  echo 'inside bash'
 			  echo 'building docker image'
 			  cd /var/lib/jenkins/workspace/poc-pipeline
 			  cp /var/lib/jenkins/workspace/poc-pipeline/target/demo-0.0.1-SNAPSHOT.jar /var/lib/jenkins/workspace/poc-pipeline
 			  sudo docker build -t pipeline .
+			 '''
 			}
 		}
 		stage('Run dokcer image'){
