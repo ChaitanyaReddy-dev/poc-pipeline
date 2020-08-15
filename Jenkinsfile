@@ -45,7 +45,7 @@ pipeline {
 			steps{
 			sh '''#!/bin/bash
 			echo 'running docker image'
-		    sudo docker run -p 8090:8085 pipeline
+		    sudo docker run -p 7050:8000 pipeline
 			echo 'application deployed'
 			'''
 			}
