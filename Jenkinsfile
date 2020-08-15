@@ -15,13 +15,13 @@ pipeline {
         }
         stage('build'){
             steps {
-            sh echo "hii i'm cleaning target"
+           echo "hii i'm cleaning target"
             sh 'mvn clean'
             }
         }
         stage('unit testing'){
             steps {
-            sh echo "hii i'm doing unit testing"
+            echo "hii i'm doing unit testing"
             sh 'mvn test'
         }
         }
