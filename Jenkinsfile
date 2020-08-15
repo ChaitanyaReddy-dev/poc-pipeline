@@ -37,7 +37,7 @@ pipeline {
 			  echo 'building docker image'
 			  cd /var/lib/jenkins/workspace/poc-pipeline
 			  cp /var/lib/jenkins/workspace/poc-pipeline/target/demo-0.0.1-SNAPSHOT.jar /var/lib/jenkins/workspace/poc-pipeline
-			  sudo -n docker build -t pipeline .
+			  sudo -n docker build -t poc-docker .
 			 '''
 			}
 		}
@@ -45,7 +45,7 @@ pipeline {
 			steps{
 			sh '''#!/bin/bash
 			echo 'running docker image'
-		    sudo docker run -p 7050:8000 pipeline
+		    sudo docker run -p 7050:8000 poc-docker
 			echo 'application deployed'
 			'''
 			}
