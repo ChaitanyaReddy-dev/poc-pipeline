@@ -1,6 +1,6 @@
 FROM java:8-jdk-alpine
 
-EXPOSE 8090
+EXPOSE 7050
 
 RUN sh -c 'touch demo-0.0.1-SNAPSHOT.jar'
 
