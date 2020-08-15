@@ -1,10 +1,8 @@
-FROM maven:3-jdk-8-alpine
+FROM java:8-jdk-alpine
 
-WORKDIR /usr/src/app
+EXPOSE 8090
 
-COPY . /usr/src/app
-RUN mvn package
+RUN sh -c 'touch demo-0.0.1-SNAPSHOT.jar'
 
-ENV PORT 5000
-EXPOSE $PORT
-CMD [ "sh", "-c", "mvn -Dserver.port=${PORT} spring-boot:run" ]
+ENTRYPOINT ["java","-jar","demo-0.0.1-SNAPSHOT.jar"]
+
