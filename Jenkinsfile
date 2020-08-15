@@ -43,9 +43,11 @@ pipeline {
 		}
 		stage('Run dokcer image'){
 			steps{
+			sh '''#!/bin/bash
 			echo 'running docker image'
 		    sudo docker run -p 8090:8085 pipeline
-			ech 'application deployed'
+			echo 'application deployed'
+			'''
 			}
 		}
     }
