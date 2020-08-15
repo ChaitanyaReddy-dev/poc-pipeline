@@ -37,7 +37,7 @@ pipeline {
 			  echo 'building docker image'
 			  cd /var/lib/jenkins/workspace/poc-pipeline
 			  cp /var/lib/jenkins/workspace/poc-pipeline/target/demo-0.0.1-SNAPSHOT.jar /var/lib/jenkins/workspace/poc-pipeline
-			  echo admin | sudo -S docker build -t pipeline .
+			  echo root | sudo -S docker build -t pipeline .
 			 '''
 			}
 		}
